@@ -1,0 +1,15 @@
+"E:\IAR for ARM\arm\bin\armproc.dll" 
+
+"E:\IAR for ARM\arm\bin\armsim2.dll" 
+
+"C:\Users\Administrator\Desktop\K66FX\Project\Debug\Exe\MK66FX_Orange.out" 
+
+--plugin="E:\IAR for ARM\arm\bin\armbat.dll" 
+
+--device_macro="E:\IAR for ARM\arm\config\debugger\NXP\Kxx.dmac" 
+
+--device_macro="E:\IAR for ARM\arm\config\debugger\NXP\K6x_Trace.dmac" 
+
+
+
+

@@ -1,0 +1,399 @@
+###############################################################################
+#
+# IAR ELF Linker V8.30.1.114/W32 for ARM                  11/Nov/2018  21:45:22
+# Copyright 2007-2018 IAR Systems AB.
+#
+#    Output file  =  
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Exe\MK66FX_Orange.out
+#    Map file     =  
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\List\MK66FX_Orange.map
+#    Command line =  
+#        -f C:\Users\ADMINI~1\AppData\Local\Temp\EW37BC.tmp
+#        (C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\Common.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\isr.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\main.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\Misc.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\MK66_adc.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\MK66_cmt.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\MK66_dac.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\MK66_dma.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\MK66_flash.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\MK66_ftm.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\MK66_gpio.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\MK66_i2c.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\MK66_lptmr.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\MK66_pit.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\MK66_port.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\MK66_rtc.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\MK66_sdhc.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\MK66_spi.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\MK66_systick.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\MK66_uart.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\MK66_wdog.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\SEEKFREE_18TFT.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\SEEKFREE_32LCD.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\SEEKFREE_7725.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\SEEKFREE_FUN.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\SEEKFREE_IIC.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\SEEKFREE_L3G4200D.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\SEEKFREE_MMA8451.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\SEEKFREE_MPU6050.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\SEEKFREE_MT9V032.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\SEEKFREE_NRF24L01.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\SEEKFREE_OLED.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\SEEKFREE_TSL1401.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\startup_MK66F18.o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj\system_MK66.o
+#        --no_out_extension -o
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\Exe\MK66FX_Orange.out
+#        --map
+#        C:\Users\Administrator\Desktop\K66FX\Project\Debug\List\MK66FX_Orange.map
+#        --config "E:\IAR for ARM\arm\config\linker\NXP\MK66xX1M_18.icf"
+#        --semihosting --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__Heap_Handler  = NoFree
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The no free heap was selected because no calls to memory
+deallocation functions were found in the application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x0 { ro section .intvec };
+"P1":  place in [from 0x400 to 0x40f] { section FlashConfig };
+"P2":  place in [from 0x0 to 0x3ff] |
+                [from 0x410 to 0xf'ffff] |
+                [from 0x1000'0000 to 0x1003'ffff] { ro };
+define block CSTACK with size = 8K, alignment = 8 { };
+define block HEAP with size = 16K, alignment = 8 { };
+"P3":  place in [from 0x1fff'0000 to 0x1fff'ffff] |
+                [from 0x2000'0000 to 0x2002'ffff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+No sections matched the following patterns:
+
+  section .flex_ram  in "P4"
+
+
+  Section            Kind         Address    Size  Object
+  -------            ----         -------    ----  ------
+"A0":                                       0x400
+  .intvec            ro code          0x0   0x400  startup_MK66F18.o [1]
+                                  - 0x400   0x400
+
+"P1":                                        0x10
+  FlashConfig        ro code        0x400    0x10  startup_MK66F18.o [1]
+                                  - 0x410    0x10
+
+"P2":                                       0xf50
+  .text              ro code        0x410   0x2c0  MK66_uart.o [1]
+  .text              ro code        0x6d0    0x88  MK66_port.o [1]
+  .text              ro code        0x758   0x2b8  SEEKFREE_MT9V032.o [1]
+  .text              ro code        0xa10    0x50  MK66_systick.o [1]
+  .text              ro code        0xa60   0x204  MK66_dma.o [1]
+  .text              ro code        0xc64   0x13c  MK66_gpio.o [1]
+  .text              ro code        0xda0    0xfa  system_MK66.o [1]
+  .text              ro code        0xe9a    0x3a  zero_init3.o [4]
+  .text              ro code        0xed4    0x70  Common.o [1]
+  .text              ro code        0xf44    0x6c  isr.o [1]
+  .text              ro code        0xfb0    0x2c  main.o [1]
+  .text              ro code        0xfdc    0x2c  copy_init3.o [4]
+  .text              ro code       0x1008    0x28  startup_MK66F18.o [1]
+  .text              ro code       0x1030    0x28  data_init.o [4]
+  .text              ro code       0x1058    0x22  fpinit_M.o [3]
+  .iar.init_table    const         0x107c    0x24  - Linker created -
+  .text              ro code       0x10a0     0x2  startup_MK66F18.o [1]
+  .text              ro code       0x10a4    0x1e  cmain.o [4]
+  .text              ro code       0x10c2     0x4  low_level_init.o [2]
+  .text              ro code       0x10c6     0x4  exit.o [2]
+  .text              ro code       0x10ca     0x2  startup_MK66F18.o [1]
+  .text              ro code       0x10cc     0xa  cexit.o [4]
+  .text              ro code       0x10d6     0x2  startup_MK66F18.o [1]
+  .text              ro code       0x10d8    0x14  exit.o [5]
+  .rodata            const         0x10ec    0x14  MK66_gpio.o [1]
+  .rodata            const         0x1100    0x14  MK66_gpio.o [1]
+  .rodata            const         0x1114    0x14  MK66_port.o [1]
+  .rodata            const         0x1128    0x14  MK66_port.o [1]
+  .text              ro code       0x113c     0xc  cstartup_M.o [4]
+  .text              ro code       0x1148     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x1150     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x1158     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x1160     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x1168     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x1170     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x1178     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x1180     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x1188     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x1190     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x1198     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x11a0     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x11a8     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x11b0     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x11b8     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x11c0     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x11c8     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x11d0     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x11d8     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x11e0     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x11e8     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x11f0     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x11f8     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x1200     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x1208     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x1210     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x1218     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x1220     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x1228     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x1230     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x1238     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x1240     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x1248     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x1250     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x1258     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x1260     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x1268     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x1270     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x1278     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x1280     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x1288     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x1290     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x1298     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x12a0     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x12a8     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x12b0     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x12b8     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x12c0     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x12c8     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x12d0     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x12d8     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x12e0     0x8  startup_MK66F18.o [1]
+  .text              ro code       0x12e8     0x4  startup_MK66F18.o [1]
+  .text              ro code       0x12ec     0x2  startup_MK66F18.o [1]
+  .text              ro code       0x12ee     0x2  startup_MK66F18.o [1]
+  .text              ro code       0x12f0     0x2  startup_MK66F18.o [1]
+  .text              ro code       0x12f2     0x2  startup_MK66F18.o [1]
+  .text              ro code       0x12f4     0x2  startup_MK66F18.o [1]
+  .rodata            const         0x12f6     0x0  zero_init3.o [4]
+  .rodata            const         0x12f6     0x0  copy_init3.o [4]
+  Initializer bytes  const         0x12f8    0x68  <for P3 s0>
+                                 - 0x1360   0xf50
+
+"P3", part 1 of 3:                           0x68
+  P3 s0                       0x1fff'0000    0x68  <Init block>
+    .data            inited   0x1fff'0000    0x24  SEEKFREE_MT9V032.o [1]
+    .data            inited   0x1fff'0024    0x20  SEEKFREE_MT9V032.o [1]
+    .data            inited   0x1fff'0044    0x14  MK66_uart.o [1]
+    .data            inited   0x1fff'0058     0x4  Common.o [1]
+    .data            inited   0x1fff'005c     0x4  Common.o [1]
+    .data            inited   0x1fff'0060     0x4  Common.o [1]
+    .data            inited   0x1fff'0064     0x1  SEEKFREE_MT9V032.o [1]
+                            - 0x1fff'0068    0x68
+
+"P3", part 2 of 3:                         0x5828
+  .bss               zero     0x1fff'0068  0x5820  SEEKFREE_MT9V032.o [1]
+  .bss               zero     0x1fff'5888     0x4  SEEKFREE_MT9V032.o [1]
+  .bss               zero     0x1fff'588c     0x1  SEEKFREE_MT9V032.o [1]
+  .bss               zero     0x1fff'588d     0x1  SEEKFREE_MT9V032.o [1]
+                            - 0x1fff'588e  0x5826
+
+"P3", part 3 of 3:                         0x2000
+  CSTACK                      0x1fff'5890  0x2000  <Block>
+    CSTACK           uninit   0x1fff'5890  0x2000  <Block tail>
+                            - 0x1fff'7890  0x2000
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+       0x1360     0xf'ffff  0xf'eca0
+  0x1000'0000  0x1003'ffff  0x4'0000
+  0x1fff'7890  0x1fff'ffff    0x8770
+  0x2000'0000  0x2002'ffff  0x3'0000
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x5826:
+          0x1fff'0068  0x5826
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x68 (102% of destination):
+               0x12f8    0x68
+    1 destination range, total size 0x65:
+          0x1fff'0000    0x65
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module              ro code  ro data  rw data
+    ------              -------  -------  -------
+command line/config:
+    ---------------------------------------------
+    Total:
+
+C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj: [1]
+    Common.o                112       12       12
+    MK66_dma.o              516
+    MK66_gpio.o             316       40
+    MK66_port.o             136       40
+    MK66_systick.o           80
+    MK66_uart.o             704       20       20
+    SEEKFREE_MT9V032.o      696       69   22 635
+    isr.o                   108
+    main.o                   44
+    startup_MK66F18.o     1 516
+    system_MK66.o           250
+    ---------------------------------------------
+    Total:                4 478      181   22 667
+
+dl7M_tlf.a: [2]
+    exit.o                    4
+    low_level_init.o          4
+    ---------------------------------------------
+    Total:                    8
+
+m7M_tls.a: [3]
+    fpinit_M.o               34
+    ---------------------------------------------
+    Total:                   34
+
+rt7M_tl.a: [4]
+    cexit.o                  10
+    cmain.o                  30
+    copy_init3.o             44
+    cstartup_M.o             12
+    data_init.o              40
+    zero_init3.o             58
+    ---------------------------------------------
+    Total:                  194
+
+shb_l.a: [5]
+    exit.o                   20
+    ---------------------------------------------
+    Total:                   20
+
+    Gaps                      2        2
+    Linker created                    41    8 192
+-------------------------------------------------
+    Grand Total:          4 736      224   30 859
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address    Size  Type      Object
+-----                       -------    ----  ----      ------
+.iar.init_table$$Base        0x107c           --   Gb  - Linker created -
+.iar.init_table$$Limit       0x10a0           --   Gb  - Linker created -
+?main                        0x10a5          Code  Gb  cmain.o [4]
+CSTACK$$Base            0x1fff'5890           --   Gb  - Linker created -
+CSTACK$$Limit           0x1fff'7890           --   Gb  - Linker created -
+DMA0_IRQHandler               0xf5f    0x12  Code  Gb  isr.o [1]
+Disable_Wdog                  0xda1    0x18  Code  Gb  system_MK66.o [1]
+GET_CFG                 0x1fff'0024    0x20  Data  Gb  SEEKFREE_MT9V032.o [1]
+GPIOX                        0x1100    0x14  Data  Lc  MK66_gpio.o [1]
+GPIOX                        0x1128    0x14  Data  Lc  MK66_port.o [1]
+MT9V032_CFG             0x1fff'0000    0x24  Data  Gb  SEEKFREE_MT9V032.o [1]
+NMI_Handler                   0xe99     0x2  Code  Gb  system_MK66.o [1]
+NVIC_DisableIRQ               0x76f    0x16  Code  Lc  SEEKFREE_MT9V032.o [1]
+NVIC_EnableIRQ                0x411    0x18  Code  Lc  MK66_uart.o [1]
+NVIC_EnableIRQ                0x759    0x16  Code  Lc  SEEKFREE_MT9V032.o [1]
+NVIC_SetPriority              0x785    0x2c  Code  Lc  SEEKFREE_MT9V032.o [1]
+PIT0_IRQHandler               0xf71     0xc  Code  Gb  isr.o [1]
+PORTA_IRQHandler              0xf45     0xa  Code  Gb  isr.o [1]
+PORTC_IRQHandler              0xf4f    0x10  Code  Gb  isr.o [1]
+PORTX                        0x10ec    0x14  Data  Lc  MK66_gpio.o [1]
+PORTX                        0x1114    0x14  Data  Lc  MK66_port.o [1]
+Region$$Table$$Base          0x107c           --   Gb  - Linker created -
+Region$$Table$$Limit         0x10a0           --   Gb  - Linker created -
+SYSTEM_CLK                    0xdcf    0x7c  Code  Gb  system_MK66.o [1]
+Start                         0xe4b    0x20  Code  Gb  system_MK66.o [1]
+UART3_RX_TX_IRQHandler        0xf7d    0x12  Code  Gb  isr.o [1]
+UART4_RX_TX_IRQHandler        0xf8f     0x8  Code  Gb  isr.o [1]
+VSYNC                         0x983    0x12  Code  Gb  SEEKFREE_MT9V032.o [1]
+__Vectors                       0x0           --   Gb  startup_MK66F18.o [1]
+__Vectors_End                 0x400          Data  Gb  startup_MK66F18.o [1]
+__Vectors_Size {Abs}          0x400           --   Gb  startup_MK66F18.o [1]
+__cmain                      0x10a5          Code  Gb  cmain.o [4]
+__exit                       0x10d9    0x14  Code  Gb  exit.o [5]
+__iar_copy_init3              0xfdd    0x2c  Code  Gb  copy_init3.o [4]
+__iar_data_init3             0x1031    0x28  Code  Gb  data_init.o [4]
+__iar_init_vfp               0x1059          Code  Gb  fpinit_M.o [3]
+__iar_program_start          0x113d          Code  Gb  cstartup_M.o [4]
+__iar_zero_init3              0xe9b    0x3a  Code  Gb  zero_init3.o [4]
+__low_level_init             0x10c3     0x4  Code  Gb  low_level_init.o [2]
+__vector_table                  0x0          Data  Gb  startup_MK66F18.o [1]
+__vector_table_0x1c            0x1c          Data  Gb  startup_MK66F18.o [1]
+_call_main                   0x10b1          Code  Gb  cmain.o [4]
+_exit                        0x10cd          Code  Gb  cexit.o [4]
+_main                        0x10bf          Code  Gb  cmain.o [4]
+bus_clk_mhz             0x1fff'0060     0x4  Data  Gb  Common.o [1]
+camera_init                   0x899    0xea  Code  Gb  SEEKFREE_MT9V032.o [1]
+core_clk_mhz            0x1fff'005c     0x4  Data  Gb  Common.o [1]
+div_set                       0xdb9    0x16  Code  Gb  system_MK66.o [1]
+dma_portx2buff_init           0xa61   0x204  Code  Gb  MK66_dma.o [1]
+dma_repeat                    0x7b1    0x50  Code  Lc  SEEKFREE_MT9V032.o [1]
+exit                         0x10c7     0x4  Code  Gb  exit.o [2]
+get_clk                       0xed5    0x70  Code  Gb  Common.o [1]
+get_config                    0x83b    0x5e  Code  Gb  SEEKFREE_MT9V032.o [1]
+gpio_init                     0xc65   0x130  Code  Gb  MK66_gpio.o [1]
+image                   0x1fff'0068  0x5820  Data  Gb  SEEKFREE_MT9V032.o [1]
+main                          0xfb1    0x2c  Code  Gb  main.o [1]
+mcgout_clk_mhz          0x1fff'0058     0x4  Data  Gb  Common.o [1]
+mt9v032_cof_uart_interrupt
+                              0x801    0x3a  Code  Gb  SEEKFREE_MT9V032.o [1]
+mt9v032_finish_flag     0x1fff'588d     0x1  Data  Gb  SEEKFREE_MT9V032.o [1]
+port_init                     0x6d1    0x7a  Code  Gb  MK66_port.o [1]
+receive                 0x1fff'5888     0x4  Data  Gb  SEEKFREE_MT9V032.o [1]
+receive_num             0x1fff'588c     0x1  Data  Gb  SEEKFREE_MT9V032.o [1]
+row_finished                  0x995     0x8  Code  Gb  SEEKFREE_MT9V032.o [1]
+seekfree_sendimg_032          0x99d    0x30  Code  Gb  SEEKFREE_MT9V032.o [1]
+systick_delay                 0xa11    0x20  Code  Gb  MK66_systick.o [1]
+systick_delay_ms              0xa31    0x1e  Code  Gb  MK66_systick.o [1]
+uart                    0x1fff'0044    0x14  Data  Gb  MK66_uart.o [1]
+uart_getchar                  0x657    0x1e  Code  Gb  MK66_uart.o [1]
+uart_init                     0x429   0x1f2  Code  Gb  MK66_uart.o [1]
+uart_putbuff                  0x637    0x20  Code  Gb  MK66_uart.o [1]
+uart_putchar                  0x61b    0x1c  Code  Gb  MK66_uart.o [1]
+uart_receive_flag       0x1fff'0064     0x1  Data  Gb  SEEKFREE_MT9V032.o [1]
+uart_rx_irq_en                0x675    0x3e  Code  Gb  MK66_uart.o [1]
+
+
+[1] = C:\Users\Administrator\Desktop\K66FX\Project\Debug\Obj
+[2] = dl7M_tlf.a
+[3] = m7M_tls.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+   4 736 bytes of readonly  code memory
+     224 bytes of readonly  data memory
+  30 859 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

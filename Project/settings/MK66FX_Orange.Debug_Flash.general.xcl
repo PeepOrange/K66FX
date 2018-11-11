@@ -1,0 +1,17 @@
+"E:\IAR for ARM\arm\bin\armproc.dll" 
+
+"E:\IAR for ARM\arm\bin\armjlink2.dll" 
+
+"E:\My_Project\Project\K66FX\Project\Debug_Flash\Exe\MK66FX_Orange.out" 
+
+--plugin="E:\IAR for ARM\arm\bin\armbat.dll" 
+
+--device_macro="E:\IAR for ARM\arm\config\debugger\NXP\Kxx.dmac" 
+
+--device_macro="E:\IAR for ARM\arm\config\debugger\NXP\K6x_Trace.dmac" 
+
+--flash_loader="E:\IAR for ARM\arm\config\flashloader\NXP\FlashK65Fxxx256K.board" 
+
+
+
+

@@ -1,0 +1,19 @@
+"--endian=little" 
+
+"--cpu=Cortex-M4" 
+
+"--fpu=VFPv4_SP" 
+
+"-p" 
+
+"E:\IAR for ARM\arm\CONFIG\debugger\NXP\MK66FX1M0xxx18.ddf" 
+
+"--semihosting" 
+
+"--device=MK66FX1M0xxx18" 
+
+"--multicore_nr_of_cores=1" 
+
+
+
+
