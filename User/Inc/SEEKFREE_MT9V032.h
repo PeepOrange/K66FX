@@ -21,10 +21,12 @@ SCL(51的TX)         C16
 #include "Include.h"
 
 
-
-#define COL     188//图像宽度   范围1-752     K60采集不允许超过188
-#define ROW     120//图像高度	范围1-480
-
+#define MT9V032_COF_UART    uart3
+#define MT9V032_COL     	188//图像宽度   范围1-752     K60采集不允许超过188
+#define MT9V032_ROW    	 	120//图像高度	范围1-480
+#define MT9V032_DMA_Ch  	DMA_CH0	//摄像头图像DMA传输通道
+#define MT9V032_VSY_PIN		C18		//像素中断
+#define MT9V032_PCLK_PIN	C3		//场中断
 
 //摄像头命令枚举
 typedef enum
@@ -51,7 +53,7 @@ typedef enum
 
 
 extern uint8 mt9v032_finish_flag;  //一场图像采集完成标志位
-extern uint8 image[ROW][COL];      //内部使用
+extern uint8 image[MT9V032_ROW][MT9V032_COL];      //内部使用
 
 
 void   mt9v032_cof_uart_interrupt(void);

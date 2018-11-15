@@ -28,7 +28,7 @@
 
 #include "isr.h"
 
-//fatfs文件系统
+//---------fatfs文件系统------------
 #include "ff.h"
 
 //--------逐飞科技产品例程库--------
@@ -44,6 +44,14 @@
 #include "SEEKFREE_MMA8451.h"
 #include "SEEKFREE_MPU6050.h"
 #include "SEEKFREE_28LCD.h"
+
+
+//--------拓展----------------------
+#include "SPI_TFT_LCD.h"
+#include "Serial_oscilloscope.h"
+
+
+
 
 
 #endif

@@ -74,11 +74,11 @@
 //如果不使用片选接口的话且需要片选接口用于做其他的时候需要注释掉，就不会进行初始化对应的管脚
 //      模块通道        端口      可选范围              建议
 
-#define SPI0_SCK_PIN    A15       // A15、C5、D1        全部都是 ALT2
-#define SPI0_SOUT_PIN   A16       // A16、C6、D2        全部都是 ALT2
-#define SPI0_SIN_PIN    A17       // A17、C7、D3        全部都是 ALT2
+#define SPI0_SCK_PIN    C5       // A15、C5、D1        全部都是 ALT2
+#define SPI0_SOUT_PIN   C6       // A16、C6、D2        全部都是 ALT2
+#define SPI0_SIN_PIN    C7       // A17、C7、D3        全部都是 ALT2
 
-#define SPI0_PCS0_PIN   A14       // A14、C4、D0、      全部都是 ALT2
+#define SPI0_PCS0_PIN   C4       // A14、C4、D0、      全部都是 ALT2
 #define SPI0_PCS1_PIN   C3        // C3、D4             全部都是 ALT2
 #define SPI0_PCS2_PIN   C2        // C2、D5             全部都是 ALT2
 #define SPI0_PCS3_PIN   C1        // C1、D6             全部都是 ALT2

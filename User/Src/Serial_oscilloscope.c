@@ -1,4 +1,5 @@
-#include"include.h"
+#include "Serial_oscilloscope.h"
+
 
 //unsigned char data_to_send[16];
 void Data_Send(UARTn uratn,unsigned short int *pst)

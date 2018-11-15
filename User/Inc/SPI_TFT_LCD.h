@@ -15,7 +15,6 @@
 //将可以释放3个可用IO
 
 
-#define TFT_LCD_LED        	C0  	//PC0--->>TFT --BL
 #define TFT_LCD_RS         	C1		//PC1--->>TFT --RS/DC
 #define TFT_LCD_CS        	C3 		//PC2--->>TFT --CS/CE
 #define TFT_LCD_RST     	C2		//PC3--->>TFT --RST
@@ -30,7 +29,6 @@
 #define	TFT_LCD_SDA_SET  	Pin_Set(TFT_LCD_SDA)    
 #define	TFT_LCD_SCL_SET  	Pin_Set(TFT_LCD_SCL)     
 #define	TFT_LCD_RST_SET  	Pin_Set(TFT_LCD_RST)     
-#define	TFT_LCD_LED_SET  	Pin_Set(TFT_LCD_LED)    
 
 //液晶控制口置0操作语句宏定义
 #define	TFT_LCD_CS_CLR  	Pin_Reset(TFT_LCD_CS)   
@@ -38,7 +36,6 @@
 #define	TFT_LCD_SDA_CLR  	Pin_Reset(TFT_LCD_SDA)       
 #define	TFT_LCD_SCL_CLR  	Pin_Reset(TFT_LCD_SCL)   
 #define	TFT_LCD_RST_CLR  	Pin_Reset(TFT_LCD_RST) 
-#define	TFT_LCD_LED_CLR  	Pin_Reset(TFT_LCD_LED) 
 
 
 //硬件SPI宏定义
@@ -47,9 +44,7 @@
 #define TFT_LCD_SPI_MODE 		MASTER
 #define TFT_LCD_SPI_High_Speed  16000000
 #define TFT_LCD_SPI_Low_Speed   1000000
-#define TFT_LCD_SPI_CTRL   	  	PTC		//定义TFT数据端口
-#define TFT_LCD_SPI_RS         	1		//PC1--->>TFT --RS/DC
-#define TFT_LCD_SPI_RST     	2		//PC2--->>TFT --RST
+
 
 
 void SPI_TFT_Lcd_Reset(void);	//复位
@@ -57,5 +52,6 @@ void SPI_TFT_Lcd_Init(void);	//初始化
 void SPI_TFT_Lcd_Clear(u16 Color);	//清屏
 void SPI_TFT_Lcd_ShowPiture(const unsigned char *p); //显示40*40 QQ图片
 void SPI_TFT_Lcd_ShowFont_GBK16(u16 x, u16 y, u16 fc, u16 bc, u8 *s);	//字体颜色和背景颜色
+void SPI_TFT_Lcd_displayimage032(uint8 *p);//显示摄像头图像
 
 #endif

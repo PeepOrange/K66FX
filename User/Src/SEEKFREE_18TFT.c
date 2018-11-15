@@ -259,7 +259,7 @@ void displayimage032(uint8 *p)
         Lcd_SetRegion(i,0,i,160-1);		//坐标设置
         for(j=0;j<160;j++)
         {	
-			temp = *(p + i*ROW/120*COL + (COL-1)-j*(COL-1)/(160-1));//读取像素点
+			temp = *(p + i*MT9V032_ROW/120*MT9V032_COL + (MT9V032_COL-1)-j*(MT9V032_COL-1)/(160-1));//读取像素点
 			
 			color=(0x001f&((temp)>>3))<<11;
             color=color|(((0x003f)&((temp)>>2))<<5);

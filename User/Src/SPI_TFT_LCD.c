@@ -40,6 +40,7 @@ void Lcd_WriteReg(u8 Index,u8 Data);
 u16 Lcd_ReadReg(u8 LCD_Reg);
 
 
+
 //---------------------------------function----------------------------------------------------//
 /****************************************************************************
 * 名    称：void LCD_GPIO_Init(void)
@@ -50,7 +51,6 @@ u16 Lcd_ReadReg(u8 LCD_Reg);
 ****************************************************************************/
  void SPIv_GPIO_Init(void)
 {
-   gpio_init(TFT_LCD_LED,GPO,1);
    gpio_init(TFT_LCD_RS,GPO,1);
    gpio_init(TFT_LCD_CS,GPO,1);
    gpio_init(TFT_LCD_RST,GPO,1);
@@ -400,6 +400,38 @@ void SPI_TFT_Lcd_ShowPiture(const unsigned char *p) //显示40*40 QQ图片
 	}		
 }
 
+
+
+
+
+//-------------------------------------------------------------------------------------------------------------------
+//  @brief      总钻风(灰度摄像头)液晶显示函数
+//  @param      *p     			图像数组地址
+//  @return     void
+//  @since      v1.0
+//  Sample usage:              
+//-------------------------------------------------------------------------------------------------------------------
+void SPI_TFT_Lcd_displayimage032(uint8 *p) 
+{
+    int i,j; 
+	
+    uint16 color = 0;
+	uint16 temp = 0;
+	
+	for(i=0;i<X_MAX_PIXEL;i++)
+    {
+        Lcd_SetRegion(i,0,i,Y_MAX_PIXEL-1);		//坐标设置
+        for(j=0;j<Y_MAX_PIXEL;j++)
+        {	
+			temp = *(p + i*MT9V032_ROW/X_MAX_PIXEL*MT9V032_COL + (MT9V032_COL-1)-j*(MT9V032_COL-1)/(Y_MAX_PIXEL-1));//读取像素点
+			
+			color=(0x001f&((temp)>>3))<<11;
+            color=color|(((0x003f)&((temp)>>2))<<5);
+            color=color|(0x001f&((temp)>>3));
+			Lcd_WriteData_16Bit(color);
+        }
+    }
+}
 
 
 

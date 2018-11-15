@@ -3456,9 +3456,9 @@ void LCD_Displayimage032(uint8 *p)
     uint16 color = 0;
 	uint16 temp = 0;
 	
-    LCD_SetWindows(0,0,COL-1,ROW-1);
+    LCD_SetWindows(0,0,MT9V032_COL-1,MT9V032_ROW-1);
     
-	for(i=0;i<COL*ROW;i++)
+	for(i=0;i<MT9V032_COL*MT9V032_ROW;i++)
     {
         temp = *p;//读取像素点
         p++;

@@ -9,21 +9,27 @@
 //-------------------------------------------------------------------------------------------------------------------
 void PORTA_IRQHandler(void)
 {
-    //清除中断标志第一种方法直接操作寄存器，每一位对应一个引脚
-	PORTA->ISFR = 0xffffffff;
-	//使用我们编写的宏定义清除发生中断的引脚
-	//PORTA_FLAG_CLR(A1);
+  int n;
+  n=0;
+  if((PORTA->ISFR & (1<<n)))
+  {
+      PORTA->ISFR |= (1<<n);
+      //用户自行添加中断内程序 
+  }
 
 }
 
 
 void PORTC_IRQHandler(void)
-{
-    //清除中断标志第一种方法直接操作寄存器，每一位对应一个引脚
-	PORTC->ISFR = 0xffffffff;
-	//使用我们编写的宏定义清除发生中断的引脚
-	//PORTC_FLAG_CLR(C1);
-    VSYNC();
+{	
+  int n;
+  n=3;//C3
+  if((PORTC->ISFR & (1<<n)))
+  {
+      PORTC->ISFR |= (1<<n);
+      VSYNC();
+  }	
+	
 }
 
 

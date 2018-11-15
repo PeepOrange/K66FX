@@ -11,9 +11,9 @@ int main(void)
 	{
 		if(mt9v032_finish_flag)
         {
-            mt9v032_finish_flag = 0;
-			//displayimage032(image[0]);
-            seekfree_sendimg_032();
+            //seekfree_sendimg_032();
+			SPI_TFT_Lcd_displayimage032((uint8_t *)image);
+            mt9v032_finish_flag = 0;			
         }
 	}
 }

@@ -1,7 +1,10 @@
 ﻿E:\My_Project\Project\K66FX\Project\Debug_Flash\Obj\MK66FX_Orange.pbd
 E:\My_Project\Project\K66FX\Project\Debug_Flash\Obj\Common.pbi
+E:\My_Project\Project\K66FX\Project\Debug_Flash\Obj\diskio.pbi
+E:\My_Project\Project\K66FX\Project\Debug_Flash\Obj\ff.pbi
 E:\My_Project\Project\K66FX\Project\Debug_Flash\Obj\isr.pbi
 E:\My_Project\Project\K66FX\Project\Debug_Flash\Obj\main.pbi
+E:\My_Project\Project\K66FX\Project\Debug_Flash\Obj\Misc.pbi
 E:\My_Project\Project\K66FX\Project\Debug_Flash\Obj\MK66_adc.pbi
 E:\My_Project\Project\K66FX\Project\Debug_Flash\Obj\MK66_cmt.pbi
 E:\My_Project\Project\K66FX\Project\Debug_Flash\Obj\MK66_dac.pbi
@@ -19,10 +22,6 @@ E:\My_Project\Project\K66FX\Project\Debug_Flash\Obj\MK66_spi.pbi
 E:\My_Project\Project\K66FX\Project\Debug_Flash\Obj\MK66_systick.pbi
 E:\My_Project\Project\K66FX\Project\Debug_Flash\Obj\MK66_uart.pbi
 E:\My_Project\Project\K66FX\Project\Debug_Flash\Obj\MK66_wdog.pbi
-E:\My_Project\Project\K66FX\Project\Debug_Flash\Obj\Misc.pbi
-E:\My_Project\Project\K66FX\Project\Debug_Flash\Obj\system_MK66.pbi
-E:\My_Project\Project\K66FX\Project\Debug_Flash\Obj\diskio.pbi
-E:\My_Project\Project\K66FX\Project\Debug_Flash\Obj\ff.pbi
 E:\My_Project\Project\K66FX\Project\Debug_Flash\Obj\SEEKFREE_18TFT.pbi
 E:\My_Project\Project\K66FX\Project\Debug_Flash\Obj\SEEKFREE_32LCD.pbi
 E:\My_Project\Project\K66FX\Project\Debug_Flash\Obj\SEEKFREE_7725.pbi
@@ -37,3 +36,4 @@ E:\My_Project\Project\K66FX\Project\Debug_Flash\Obj\SEEKFREE_OLED.pbi
 E:\My_Project\Project\K66FX\Project\Debug_Flash\Obj\SEEKFREE_TSL1401.pbi
 E:\My_Project\Project\K66FX\Project\Debug_Flash\Obj\Serial_oscilloscope.pbi
 E:\My_Project\Project\K66FX\Project\Debug_Flash\Obj\SPI_TFT_LCD.pbi
+E:\My_Project\Project\K66FX\Project\Debug_Flash\Obj\system_MK66.pbi
