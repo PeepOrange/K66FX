@@ -283,6 +283,7 @@ void SPI_TFT_Lcd_Init(void)
   systick_delay_ms(50);                                     // Delay 50ms
   Lcd_WriteIndex(0x07); Lcd_WriteData_16Bit(0x1017);
   Lcd_WriteIndex(0x22);	
+  SPI_TFT_Lcd_Clear(WHITE);
 }
 
 
@@ -405,33 +406,69 @@ void SPI_TFT_Lcd_ShowPiture(const unsigned char *p) //显示40*40 QQ图片
 
 
 //-------------------------------------------------------------------------------------------------------------------
-//  @brief      总钻风(灰度摄像头)液晶显示函数
-//  @param      *p     			图像数组地址
+//  @brief      总钻风(灰度摄像头)液晶显示灰度函数
+//  @param      
 //  @return     void
 //  @since      v1.0
 //  Sample usage:              
 //-------------------------------------------------------------------------------------------------------------------
-void SPI_TFT_Lcd_displayimage032(uint8 *p) 
+void SPI_TFT_Lcd_displayimage032() 
 {
     int i,j; 
 	
     uint16 color = 0;
 	uint16 temp = 0;
 	
-	for(i=0;i<X_MAX_PIXEL;i++)
+	for(i=0;i<MT9V032_COL;i++)
     {
-        Lcd_SetRegion(i,0,i,Y_MAX_PIXEL-1);		//坐标设置
-        for(j=0;j<Y_MAX_PIXEL;j++)
+        Lcd_SetRegion(i,0,i,MT9V032_ROW);		//坐标设置
+        for(j=0;j<MT9V032_ROW;j++)
         {	
-			temp = *(p + i*MT9V032_ROW/X_MAX_PIXEL*MT9V032_COL + (MT9V032_COL-1)-j*(MT9V032_COL-1)/(Y_MAX_PIXEL-1));//读取像素点
+			temp = image[j][i];//读取像素点
 			
 			color=(0x001f&((temp)>>3))<<11;
-            color=color|(((0x003f)&((temp)>>2))<<5);
-            color=color|(0x001f&((temp)>>3));
+          color=color|(((0x003f)&((temp)>>2))<<5);
+          color=color|(0x001f&((temp)>>3));			//显示灰度图
+			
 			Lcd_WriteData_16Bit(color);
         }
     }
+	
+
 }
+
+
+
+
+
+
+//-------------------------------------------------------------------------------------------------------------------
+//  @brief      总钻风(灰度摄像头)液晶显示灰二值化函数
+//  @param      
+//  @return     void
+//  @since      v1.0
+//  Sample usage:              
+//-------------------------------------------------------------------------------------------------------------------
+void SPI_TFT_Lcd_displayimage032_bw() 
+{
+    int i,j; 
+	
+	
+	for(i=0;i<MT9V032_COL;i++)
+    {
+        Lcd_SetRegion(i,0,i,MT9V032_ROW);		//坐标设置
+        for(j=0;j<MT9V032_ROW;j++)
+        {				
+			if(image[j][i]>MT9V032_Threshold)
+			Lcd_WriteData_16Bit(WHITE);
+			else
+			Lcd_WriteData_16Bit(BLACK);			  
+        }
+    }
+	
+
+}
+
 
 
 

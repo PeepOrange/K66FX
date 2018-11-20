@@ -16,9 +16,9 @@
 
 
 #define TFT_LCD_RS         	C1		//PC1--->>TFT --RS/DC
-#define TFT_LCD_CS        	C3 		//PC2--->>TFT --CS/CE
+#define TFT_LCD_CS        	C4 		//PC2--->>TFT --CS/CE
 #define TFT_LCD_RST     	C2		//PC3--->>TFT --RST
-#define TFT_LCD_SCL        	C4		//PC4--->>TFT --SCL/SCK
+#define TFT_LCD_SCL        	C3		//PC4--->>TFT --SCL/SCK
 #define TFT_LCD_SDA        	C5		//PC5--->>TFT --SDA/DIN
 
 
@@ -42,7 +42,7 @@
 #define TFT_LCD_SPI		 		spi0
 #define TFT_LCD_SPI_CS   		SPI_PCS0
 #define TFT_LCD_SPI_MODE 		MASTER
-#define TFT_LCD_SPI_High_Speed  16000000
+#define TFT_LCD_SPI_High_Speed  35000000
 #define TFT_LCD_SPI_Low_Speed   1000000
 
 
@@ -52,6 +52,8 @@ void SPI_TFT_Lcd_Init(void);	//初始化
 void SPI_TFT_Lcd_Clear(u16 Color);	//清屏
 void SPI_TFT_Lcd_ShowPiture(const unsigned char *p); //显示40*40 QQ图片
 void SPI_TFT_Lcd_ShowFont_GBK16(u16 x, u16 y, u16 fc, u16 bc, u8 *s);	//字体颜色和背景颜色
-void SPI_TFT_Lcd_displayimage032(uint8 *p);//显示摄像头图像
+void SPI_TFT_Lcd_displayimage032();//显示摄像头灰度图像
+void SPI_TFT_Lcd_displayimage032_bw() ;//显示摄像头二值化图像
+
 
 #endif

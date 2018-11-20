@@ -27,6 +27,8 @@ SCL(51的TX)         C16
 #define MT9V032_DMA_Ch  	DMA_CH0	//摄像头图像DMA传输通道
 #define MT9V032_VSY_PIN		C18		//像素中断
 #define MT9V032_PCLK_PIN	C3		//场中断
+#define MT9V032_Threshold	35		//二值化阈值
+
 
 //摄像头命令枚举
 typedef enum

@@ -37,7 +37,7 @@ SPI-0		用于配置、控制LCD
 RS			命令/数据选择		C1
 RST			复位				C2
 CLK			SPI0时钟			C5
-SDA			SPI0-MOSI(数据输出) C7
+SDA			SPI0-MISO(数据输出) C6
 CS			SPI0-CS(片选)		C4
 NC			无用				悬空
 ---------------------------------------------

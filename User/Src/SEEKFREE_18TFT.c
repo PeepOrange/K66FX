@@ -41,20 +41,20 @@ void tft_delay(long t)
     while(t--);
 }
 
-void  Lcd_WriteIndex(uint8 dat)			//写命令
+static void  Lcd_WriteIndex(uint8 dat)			//写命令
 {	
     DC(0);
     spi_mosi(spi0,SPI_PCS0,&dat,&dat,1);		
 
 }
 
-void Lcd_WriteData(uint8 dat)			//写数据
+static void Lcd_WriteData(uint8 dat)			//写数据
 {
     DC(1);
     spi_mosi(spi0,SPI_PCS0,&dat,&dat,1);
 }
 
-void  LCD_WriteData_16Bit(uint16 dat)	//向液晶屏写一个16位数据
+static void  LCD_WriteData_16Bit(uint16 dat)	//向液晶屏写一个16位数据
 {
     uint8 h,l;
     h = dat >> 8;
